@@ -13,11 +13,11 @@ sys.path.append('')
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify('hahah')
+    return jsonify('hahaha')
 
 
 @app.route('/search', methods=['GET', 'POST'])
-def movies():
+def books():
     text = request.args.get('q', '')
     if text != '':
         result = search(text)

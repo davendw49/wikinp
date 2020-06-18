@@ -1,9 +1,8 @@
-# hakuna电影搜索引擎（mini）
+# WIKI for Nobel Prize and Pulitzer Prize 搜索引擎
+----
 > scrapy+elasticsearch+flask+vue
 
 just for fun,for learn.
-
-![hakuna](hakuna.gif)
 
 ### how to run？
 ```
@@ -31,13 +30,3 @@ scrapy crawl douban
 
 # 访问: localhost:8080
 ```
-
-### mini系列
-[mini_todo](https://github.com/shiniao/mini_todo)——基于 go 语言的 todo restful-api 实践(gin+vue)
-
-[mini_sms_classify](https://github.com/shiniao/mini_sms_classify)——小型垃圾邮件分类系统（naive_bayes+flask+vue）
-
-[mini_mnist](https://github.com/shiniao/mini_mnist)——mini手写数字识别(CNN+flask+vue)
-
-### 联系我
-email: zhuzhezhe95@gmail.com

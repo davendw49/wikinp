@@ -26,7 +26,7 @@
 <template>
     <div class="search">
         <div class="left">
-            <img src="./../assets/hakuna.png" @click="goHome">
+            <img src="./../assets/wikinp.png" @click="goHome">
         </div>
         <div class="right">
             <a-input-search
@@ -71,7 +71,7 @@
                 console.info("search text: " + this.searchText)
 
 
-                const path = 'http://localhost:5000/search?q=' + this.$route.query.q;
+                const path = 'http://localhost:7777/search?q=' + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
                         this.result = res.data;
