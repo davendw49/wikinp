@@ -1,32 +1,29 @@
 # WIKI for Nobel Prize and Pulitzer Prize 搜索引擎
+
 ----
 > scrapy+elasticsearch+flask+vue
 
-just for fun,for learn.
+## step 1 安装[中文分词插件ik](https://github.com/medcl/elasticsearch-analysis-ik)
 
-### how to run？
-```
-# 安装中文分词插件ik
-# https://github.com/medcl/elasticsearch-analysis-ik
-> elasticsearch-plugin install <>
-# 启动elasticsearch
-> bin/elasticsearch
+- `elasticsearch-plugin install <>`
 
-# 设置虚拟环境
-> python -m venv env
-> source env/bin/activate
-> pip install -r requirements.txt
+## 启动elasticsearch
 
-# 启动爬虫
-# 数据自动送入elasticsearch
-scrapy crawl douban
+- `bin/elasticsearch`
 
-# server
-> python app.py
+## 设置python环境
 
-# client
-> npm install
-> npm run serve
+- `pip install -r requirements.txt`
 
-# 访问: localhost:8080
-```
+## 启动backend
+
+- `python app.py`
+
+## 启动frontend
+
+- `npm install`
+- `npm run serve`
+
+## 访问
+
+- `ip:8080`
