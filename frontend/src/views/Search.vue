@@ -82,7 +82,8 @@
                 const path = location.href.replace(this.$route.path,'').replace(this.$route.query.q, '') .replace('?q=', '')+ "/api/search?q=" + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
-                        this.result = res.data[0];
+                        console.log(res)
+                        this.result = res.data;
                         console.info(this.result)
                     })
                     .catch((error) => {
