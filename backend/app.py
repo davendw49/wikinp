@@ -21,9 +21,10 @@ def books():
     text = request.args.get('q', '')
     if text != '':
         result, runtime = search(text)
-        return jsonify(result['hits']['hits']), runtime
+        r = result['hits']['hits'].append(runtime)
+        return jsonify(r)
     else:
-        return jsonify('none'), 0.0
+        return jsonify(['none',0.0])
 
 
 if __name__ == "__main__":
