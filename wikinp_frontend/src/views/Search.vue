@@ -83,7 +83,7 @@
                     console.info("search text: " + this.searchText);
 
 
-                    const path = "http://wikinp.big-cheng.com/api/search?q=" + this.$route.query.q;
+                    const path = location.href.replace(this.$route.path,'').replace(this.$route.query.q, '') .replace('?q=', '')+ "/api/search?q=" + this.$route.query.q;;
                     axios.get(path)
                         .then((res) => {
                             this.result = res.data.result;
