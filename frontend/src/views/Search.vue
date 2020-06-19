@@ -37,6 +37,9 @@
                 <searchResult :info="item"></searchResult>
             </div>
         </div>
+        <div class="left">
+            <img src="./../assets/about.png" @click="goHome">
+        </div>
 
 
     </div>
@@ -61,6 +64,10 @@
         methods: {
             goHome() {
                 this.$router.push("/")
+
+            },
+            goAbout() {
+                this.$router.push("/about")
 
             },
             searchResult() {
