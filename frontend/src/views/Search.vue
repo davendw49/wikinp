@@ -33,7 +33,7 @@
                     v-focus v-model="searchText"
                     size="large"
                     @search="searchResult"/>
-        <div> :restime </div>
+        <div> {{restime}} </div>
             <div v-for="item in result" v-bind:key="item.id">
                 <searchResult :info="item"></searchResult>
             </div>
