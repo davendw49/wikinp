@@ -32,8 +32,8 @@
             <a-input-search
                     v-focus v-model="searchText"
                     size="large"
-                    @search="searchResult"/>
-        <div> search time: {{runtime}} </div>
+                    @search="goSearch"/>
+        <div> search time: {{runtime.toFixed(6)}} </div>
             <div v-for="item in result" v-bind:key="item.id">
                 <searchResult :info="item"></searchResult>
             </div>
@@ -52,9 +52,9 @@
         name: "Search",
         data() {
             return {
-                searchText: "",
+                searchText: this.$route.query.q,
                 result: [],
-                runtime: "-",
+                runtime: 0,
             }
         },
         components: {
@@ -70,37 +70,52 @@
                 this.$router.push("/about")
 
             },
-            searchResult() {
+            goSearch() {
                 if (this.searchText !== '') {
                     this.$router.push({path: `/search`, query: {q: this.searchText}});
                 }
-                console.info("router query:" + this.$route.query.q);
-                console.info("search text: " + this.searchText);
+            },
+            searchResult() {
+                if (this.searchText !== '') {
+                    this.$router.push({path: `/search`, query: {q: this.searchText}});
+                
+                    console.info("router query:" + this.$route.query.q);
+                    console.info("search text: " + this.searchText);
 
 
-                const path = location.href.replace(this.$route.path,'').replace(this.$route.query.q, '') .replace('?q=', '')+ "/api/search?q=" + this.$route.query.q;
-                axios.get(path)
-                    .then((res) => {
-                        this.result = res.data.result;
-                        this.runtime = res.date.runtime;
-                        console.info(this.result);
-                        console.info(this.runtime);
-                    })
-                    .catch((error) => {
-                        // eslint-disable-next-line
-                        console.error(error);
-                    });
+                    const path = "http://wikinp.big-cheng.com/api/search?q=" + this.$route.query.q;
+                    axios.get(path)
+                        .then((res) => {
+                            this.result = res.data.result;
+                            this.runtime = res.data.runtime;
+                            console.info(this.result);
+                            console.info(this.runtime);
+                        })
+                        .catch((error) => {
+                            // eslint-disable-next-line
+                            console.error(error);
+                        });
+                }
             }
         },
 
         created() {
             this.searchResult()
         },
-
+        
         watch: {
             '$route'(to, from) {
                 // 对路由变化作出响应...
                 this.searchResult()
+            }
+        },
+        
+        directives: {
+            focus: {
+                // 指令的定义
+                inserted: function (el) {
+                el.focus()
+                }
             }
         }
     }
