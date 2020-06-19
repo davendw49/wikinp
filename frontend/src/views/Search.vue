@@ -78,7 +78,7 @@
                 console.info("search text: " + this.searchText)
 
 
-                const path = 'http://10.10.10.1:7777/search?q=' + this.$route.query.q;
+                const path = 'http://0.0.0.0:7777/search?q=' + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
                         this.result = res.data;
