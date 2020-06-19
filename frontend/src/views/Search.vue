@@ -56,7 +56,7 @@
             return {
                 searchText: "",
                 result: [],
-                runtime: "",
+                runtime: "-",
             }
         },
         components: {
@@ -86,6 +86,7 @@
                         this.result = res.data.result;
                         this.runtime = res.date.runtime;
                         console.info(this.result)
+                        console.info(this.runtime)
                     })
                     .catch((error) => {
                         // eslint-disable-next-line
