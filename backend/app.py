@@ -23,7 +23,7 @@ def books():
         result, runtime = search(text)
         return jsonify(result['hits']['hits']), runtime
     else:
-        return jsonify('none')
+        return jsonify('none'), 0.0
 
 
 if __name__ == "__main__":
