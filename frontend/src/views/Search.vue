@@ -72,7 +72,7 @@
             },
             searchResult() {
                 if (this.searchText !== '') {
-                    this.$router.push({path: `/api/search`, query: {q: this.searchText}})
+                    this.$router.push({path: `/search`, query: {q: this.searchText}})
                 }
                 console.info("router query:" + this.$route.query.q)
                 console.info("search text: " + this.searchText)
