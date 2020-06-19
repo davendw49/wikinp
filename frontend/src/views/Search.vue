@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="left">
-            <img src="./../assets/about.png" @click="goHome">
+            <img src="./../assets/about.png" @click="goAbout">
         </div>
 
 
