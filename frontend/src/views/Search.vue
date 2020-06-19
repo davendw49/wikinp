@@ -33,7 +33,7 @@
                     v-focus v-model="searchText"
                     size="large"
                     @search="searchResult"/>
-        <div> search time: </div>
+        <div> search time: {{runtime}} </div>
             <div v-for="item in result" v-bind:key="item.id">
                 <searchResult :info="item"></searchResult>
             </div>
@@ -56,6 +56,7 @@
             return {
                 searchText: "",
                 result: [],
+                runtime: "",
             }
         },
         components: {
@@ -82,7 +83,8 @@
                 const path = location.href.replace(this.$route.path,'').replace(this.$route.query.q, '') .replace('?q=', '')+ "/api/search?q=" + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
-                        this.result = res.data;
+                        this.result = res.data.result;
+                        this.runtime = res.date.runtime;
                         console.info(this.result)
                     })
                     .catch((error) => {

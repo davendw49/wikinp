@@ -3,6 +3,8 @@ from flask_cors import CORS
 
 from search import search
 
+import time
+
 app = Flask(__name__)
 CORS(app)
 
@@ -20,9 +22,11 @@ def index():
 def books():
     text = request.args.get('q', '')
     if text != '':
+        start_time = time.time()
         result = search(text)
         r = result['hits']['hits']
-        return jsonify(r)
+        end_time = time.time()
+        return jsonify({'result': r, 'runtime':endtime-starttime})
     else:
         return jsonify(['none',0.0])
 
