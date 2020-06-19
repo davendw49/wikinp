@@ -29,4 +29,4 @@ def search(query: str):
     start_time = time.time()
     result = es.search(index='wsm', docvalue_fields=['books'], body=dsl, size=10)
     end_time=time.time()
-    return result, end_time-start_time
+    return result
