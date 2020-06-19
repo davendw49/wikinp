@@ -26,7 +26,7 @@ def books():
         result = search(text)
         r = result['hits']['hits']
         end_time = time.time()
-        return jsonify({'result': r, 'runtime':endtime-starttime})
+        return jsonify({'result': r, 'runtime':end_time-start_time})
     else:
         return jsonify(['none',0.0])
 
