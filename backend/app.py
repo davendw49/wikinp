@@ -20,8 +20,8 @@ def index():
 def books():
     text = request.args.get('q', '')
     if text != '':
-        result = search(text)
-        return jsonify(result['hits']['hits'])
+        result, runtime = search(text)
+        return jsonify(result['hits']['hits']), runtime
     else:
         return jsonify('none')
 

@@ -4,6 +4,7 @@ elasticsearch
 """
 
 from elasticsearch import Elasticsearch
+import time
 
 es = Elasticsearch()
 
@@ -25,6 +26,7 @@ def search(query: str):
             }
         }
     }
-
+    start_time = time.time()
     result = es.search(index='wsm', docvalue_fields=['books'], body=dsl, size=10)
-    return result
+    end_time=time.time()
+    return result, end_time-start_time
