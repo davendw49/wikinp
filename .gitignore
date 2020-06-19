@@ -1,12 +1,12 @@
 .DS_Store
-/wikinp/node_modules/
-/wikinp/dist/
-/wikinp/npm-debug.log*
-/wikinp/yarn-debug.log*
-/wikinp/yarn-error.log*
-/wikinp//test/unit/coverage/
-/wikinp//test/e2e/reports/
-/wikinp/selenium-debug.log
+/wikinp_frontend/node_modules/
+/wikinp_frontend/dist/
+/wikinp_frontend/npm-debug.log*
+/wikinp_frontend/yarn-debug.log*
+/wikinp_frontend/yarn-error.log*
+/wikinp_frontend/test/unit/coverage/
+/wikinp_frontend/test/e2e/reports/
+/wikinp_frontend/selenium-debug.log
 
 # Editor directories and files
 .idea
