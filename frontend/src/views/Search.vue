@@ -82,10 +82,8 @@
                 const path = location.href.replace(this.$route.path,'').replace(this.$route.query.q, '') .replace('?q=', '')+ "/api/search?q=" + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
-                        this.result = res.data[0];
-                        this.restime = res.data[1];
+                        this.result = res.data;
                         console.info(this.result)
-                        console.thetime(this.restime)
                     })
                     .catch((error) => {
                         // eslint-disable-next-line
