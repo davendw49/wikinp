@@ -41,8 +41,6 @@
         <div class="left">
             <img src="./../assets/about.png" @click="goAbout">
         </div>
-
-
     </div>
 </template>
 
@@ -74,10 +72,10 @@
             },
             searchResult() {
                 if (this.searchText !== '') {
-                    this.$router.push({path: `/search`, query: {q: this.searchText}})
+                    this.$router.push({path: `/search`, query: {q: this.searchText}});
                 }
-                console.info("router query:" + this.$route.query.q)
-                console.info("search text: " + this.searchText)
+                console.info("router query:" + this.$route.query.q);
+                console.info("search text: " + this.searchText);
 
 
                 const path = location.href.replace(this.$route.path,'').replace(this.$route.query.q, '') .replace('?q=', '')+ "/api/search?q=" + this.$route.query.q;
@@ -85,8 +83,8 @@
                     .then((res) => {
                         this.result = res.data.result;
                         this.runtime = res.date.runtime;
-                        console.info(this.result)
-                        console.info(this.runtime)
+                        console.info(this.result);
+                        console.info(this.runtime);
                     })
                     .catch((error) => {
                         // eslint-disable-next-line
