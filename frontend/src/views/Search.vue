@@ -83,7 +83,7 @@
                 axios.get(path)
                     .then((res) => {
                         this.result = res.data;
-                        console.info(this.result)
+                        console.info(res)
                     })
                     .catch((error) => {
                         // eslint-disable-next-line
