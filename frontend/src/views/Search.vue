@@ -72,13 +72,13 @@
             },
             searchResult() {
                 if (this.searchText !== '') {
-                    this.$router.push({path: `/search`, query: {q: this.searchText}})
+                    this.$router.push({path: `/api/search`, query: {q: this.searchText}})
                 }
                 console.info("router query:" + this.$route.query.q)
                 console.info("search text: " + this.searchText)
 
 
-                const path = 'http://10.10.10.1:7777/search?q=' + this.$route.query.q;
+                const path = location.href.replace(this.$route.path,'') + "/api/search?q=" + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
                         this.result = res.data;
