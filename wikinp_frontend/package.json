@@ -16,7 +16,7 @@
   "dependencies": {
     "ant-design-vue": "^1.3.16",
     "antd-input": "0.0.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "less": "^3.11.3",
     "less-loader": "^4.1.0",
     "vue": "^2.5.2",
